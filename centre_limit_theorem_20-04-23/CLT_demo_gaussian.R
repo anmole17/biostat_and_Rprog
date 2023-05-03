@@ -63,7 +63,7 @@ mu<-20
 sigma<-4
 
 
-for(i in 1:10000){
+for(i in 1:100000){
 	Xc <- rnorm(msample, mean=mu, sd=sigma)
 	Xcbar <-mean(Xc)
 	s <- sd(Xc)
