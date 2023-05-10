@@ -6,7 +6,7 @@
 # of strsmall in strbig. If not, it returns zero.
 # Demonstrate this with example DNA strings
 
-## function to input strings
+## function to input strings irrespective of platform
 input_value <- function(string){
   if (interactive()) {
     con <- stdin()
@@ -18,20 +18,22 @@ input_value <- function(string){
   return(symbol)
 }
 
-strbig <- input_value("Enter the big DNA string: \n")
-strsmall<-input_value("Enter the DNA pattern to search: \n")
-
-string_location<-function(strbig,strsmall){
-  
+string_location<-function(strbig,strsmall){ 
+  # it works better if we can 
+  # strbig <- input_value("Enter the big DNA string: \n")  
+  # strsmall<-input_value("Enter the DNA pattern to search: \n")
   if(nchar(strbig)>nchar(strsmall)){
-    pos=regexpr(strsmall,strbig, ignore.case=T)
-    if(pos != -1){print(paste("The position of the pattern is: ", pos))
-        return (pos)
+    pos=regexpr(strsmall,strbig, ignore.case=T, )
+    if(pos != -1){print(paste("The position of the pattern is: ", pos[1]))
+        return (pos[1])
       } else{print("Pattern Not found: 0") 
         return (0);}
   }else{print("Pattern bigger than string length")
     return (0)}
 }
+strbig <- input_value("Enter the big DNA string: \n")
+strsmall<-input_value("Enter the DNA pattern to search: \n")
+
 startpos<-string_location(strbig,strsmall)
  
 # (b) Write a R function called ”VectorOp” which takes two vector of numbers V1 and V2 as

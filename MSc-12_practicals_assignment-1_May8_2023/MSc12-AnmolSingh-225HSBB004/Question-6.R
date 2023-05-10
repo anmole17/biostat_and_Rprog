@@ -8,9 +8,10 @@ par(mfrow=c(2,1))
 # A) plots their bar plots side by side.
 bar_placebo <- barplot(placebo, ylab= " Test parameter", xlab="Patients", main="Placebo Data", col = "red", ylim= c(0,10))
 bar_treat <- barplot(treatment, ylab= " Test parameter", xlab="Patients", main="Treatment Data", col = "blue", ylim= c(0,10))
-bar_placebo
-bar_treat
-# B) Add standard error on mean as error bar in the plot
+
+# B) Add standard error on mean as error bar in the plot : 
+# sigma is not given 
+# Std error on mean:  Sx/sqrt(n) ; Sx is SD of sample
 SE_placebo=sd(placebo)/length(placebo)
 SE_treat=sd(treatment)/length(treatment)
 X11()

@@ -28,11 +28,10 @@ data=rnorm(1000, mean=mean, sd=sd)
 hist(data,
      main='Gaussian Distribution: mean = 6, sd=1.6',
      ylab='Frequency',
-     xlab ='Data')
+     xlab ='Data', ylim=c(0,250))
 
 # # c) For this data, find the number of data points more than 2 standard deviations above the
 # mean value and print this number
-subdata<- subset(data, data>((2*sd)+mean))
-print(subdata)
-print(paste("Number of data points  more than 2 standard deviation above mean value:", nrow(subdata)))
+subdata1<- subset(data1, data1>((2*sd)+mean))
+print(paste("Number of data points more than 2 standard deviation above mean value:", length(subdata1) ))
 

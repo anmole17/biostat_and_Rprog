@@ -10,7 +10,7 @@ Monthly_Salary <- c(23.7, 25.6, 34.0, 35.8, 44.0, 46.0, 54.2, 55.9, 62.5)
 # Plot should have filled circles in blue color as points, also joined by a line.
 plot(Work_Experience, Monthly_Salary, xlab="Work Experience(Years)",
      ylab="Monthly Salary (Thousand of Rupees)", 
-     main="Monthly Salary vs Work Experience", ylim = c(20,70), xlim = c(0,11), 
+     main="Monthly Salary (Thousand of Rupees) vs Work Experience(Years)", ylim = c(20,70), xlim = c(2,11), 
      pch = 16,col="blue")
 lines( Work_Experience, Monthly_Salary )
 
