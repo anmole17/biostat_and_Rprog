@@ -37,13 +37,4 @@ pie(x=data_pie,data_pie, main="Cultivation area of crops during 2012-13",
 legend("topleft",colum, cex = 0.8,
        fill = rainbow(length(data_pie)))
 
-# we can also do this using mean of the data:
-mean_df<-mean(mydata)
-data_pie=c(mean_df$Rice, mean_df$Wheat, mean_df$Pulses, mean_df$Grains
-          , mean_df$OilSeeds, mean_df$Sugarcane, mean_df$Cotton, mean_df$Jute)
-pie(x=data_pie,data_pie, main="Mean Cultivation area of crops 1950-2013",
-    col = rainbow(length(data_pie)))
-
-legend("topleft",colum, cex = 0.8,
-       fill = rainbow(length(data_pie)))
 

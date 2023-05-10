@@ -15,7 +15,7 @@ print(head(indat$rice_wheat_cereals))
 
 
 #c)Create a subset of data in which cereals were cultivated in more than 10 percent of total
-#       area and print this sunset
+#       area and print this subset
 cereals_gt_10 <- subset(indat, indat$Cereals > 10)
 cat("Subset of cereal > 10 percent of total area:\n")
-print( cereals_gt_10)
+print(cereals_gt_10)

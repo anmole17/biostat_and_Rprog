@@ -32,6 +32,6 @@ hist(data,
 
 # # c) For this data, find the number of data points more than 2 standard deviations above the
 # mean value and print this number
-subdata1<- subset(data1, data1>((2*sd)+mean))
+subdata1<- subset(data, data>((2*sd)+mean))
 print(paste("Number of data points more than 2 standard deviation above mean value:", length(subdata1) ))
 

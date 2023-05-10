@@ -15,11 +15,12 @@ confidence_lvl <- 1-(alpha/2)
 # sigma of parent distribution is unknown : we will use t-distribution exp_lvl -> t(n-1)
 conf_interval <- qt(confidence_lvl, n-1) * Sdev/sqrt(n)
 
-cat("The data of the gene expression lvl:")
+print("The data of the gene expression lvl:")
 print(exp_lvl)
-cat("The mean of the data: ",mean,"\nStandard Deviation: ", sd, 
-            "\n95% confidence interval: (",  mean_exp+conf_interval, ",", 
-            mean_exp-conf_interval,")")
+print(paste("The mean of the data: ",mean_exp))
+print(paste(" Standard Deviation: ", Sdev))
+print(paste(" 95% confidence interval: (",  mean_exp+conf_interval, ",", 
+            mean_exp-conf_interval,")"))
 # bar plot to show standard dev as error on data
 par(mfrow=c(2,1))
 bar_stdev <- barplot(exp_lvl, ylab= " Gene expression level", xlab=" Samples",

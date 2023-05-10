@@ -19,9 +19,6 @@ input_value <- function(string){
 }
 
 string_location<-function(strbig,strsmall){ 
-  # it works better if we can 
-  # strbig <- input_value("Enter the big DNA string: \n")  
-  # strsmall<-input_value("Enter the DNA pattern to search: \n")
   if(nchar(strbig)>nchar(strsmall)){
     pos=regexpr(strsmall,strbig, ignore.case=T, )
     if(pos != -1){print(paste("The position of the pattern is: ", pos[1]))
@@ -31,10 +28,12 @@ string_location<-function(strbig,strsmall){
   }else{print("Pattern bigger than string length")
     return (0)}
 }
-strbig <- input_value("Enter the big DNA string: \n")
-strsmall<-input_value("Enter the DNA pattern to search: \n")
+#  to take input from user
+# strbig <- input_value("Enter the big DNA string: \n")
+# strsmall<-input_value("Enter the DNA pattern to search: \n")
 
-startpos<-string_location(strbig,strsmall)
+#startpos<-string_location(strbig,strsmall)
+string_location("TATAGATAG", "TAGA")
  
 # (b) Write a R function called ”VectorOp” which takes two vector of numbers V1 and V2 as
 # parameters. It returns a vector which is the square root of the product of two vectors. Demonstrate
