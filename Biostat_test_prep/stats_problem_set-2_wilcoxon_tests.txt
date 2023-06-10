@@ -1,0 +1,55 @@
+
+                        Problems
+                   -----------------
+
+1. It is claimed that the median weight of a bag of rice in a load is 40 Kg.
+In order to test this, 13 bags were randomly chosen from the load and their measured weights are given below:
+
+X = {41.2, 39.5, 41.3, 36.8, 38.8, 40.9, 38.9, 34.9, 39.2, 31.7, 40.8, 38.0, 30.9}
+
+ (A). Test the the hypothesis that the median weight of a bag of rice is significantly different from 40 Kg. Use a significance level of 0.05 for this.
+
+ (B). Test the hypothesis that the median weight of a bag of rice is less than 40 Kg to a significant level of 0.05.
+
+ 
+
+2. About 25 years ago, the height of 14 year old teenage boys in a Scandinavian city was measured to be a Gaussian with a mean 158 cm and standard deviation  6.1 cm.  In order to check the hypothesis that their median height has increased considerably in 25 years, a recent measurement of height was made on 15 boys of same age (14 years). The data of their height in cm is given below:
+
+ { 165, 167, 170, 149, 160, 168, 155, 157, 160, 159, 166, 169, 159, 160, 163 }
+
+From this data, can we conclude that the median height has significantly increased in 25 years?. Use 0.05 as a significance level for comparison.
+
+
+3. A group of scientists wanted to test whether, on the average, lymphocytes and tumor cells differ in size. The following are the cell diameters (in microns) of 10 lymphocytes and 10 tumor cells obtained from biopsies of tissue from patients with melanoma:
+
+  Lymphocytes : 9.0, 9.4, 4.7, 4.8, 8.9, 4.9, 8.4, 5.9, 6.3, 5.7
+
+  Tumor cells : 12.6, 14.6, 16.2, 23.9, 23.3, 17.1, 20.0, 21.0, 19.1, 19.4
+
+Perform an appropriate non-parametric test to conclude that the two types of cells have signifi cant diference in their diameters. Use 0.05 as the significance level. State your null hypothesis and alternate hypothesis clearly.
+ 
+
+4. A medial research was aimed at finding whether two populations of infants differ with respect to median age at which they walked independently. The age when 9 babies from each group walked independently were noted as below:
+
+  Group-A : 10.2, 9.5, 10.1, 10.0, 9.8, 10.9, 11.4, 10.8, 9.7   (age in months)
+
+  Group-B : 11.0, 11.2, 10.1, 11.4, 11.7, 11.2, 10.8, 11.6, 10.9  (age in months)
+
+Assuming the distributions are Gaussians, perform an appropriate Wolcoxon test for the hypothesis that group-A walked earlier than group-B to a significant level of 0.04.
+
+State the null and alternate hypotheses for this test.
+
+
+5. Doctors measured the fine motor skills of 12 children receiving occupational therapy.For every child, they measured an index for fine motor skills before and 7 months after the occuptational therapy. The scores are listed below:
+
+   Subject:       1     2     3     4     5      6     7    8      9    10    11     12
+
+   Pre-therapy:   91    61    85    88    94    112   109   79    109   115   46     45 
+
+   Post-therapy:  94    94    103   112   91    112   112   97    100   106   46     41
+
+Can we conclude on the basis of these data that after 7 months, the fine motor skills in a population of similar subjects would be stronger?. Perform an appropriate Wilcoxon test (with $alph = 0.05$) to arrive at a conclusion. Write the null hypothesis, alternate hypothesis and the conclusions clearly.
+
+
+
+
