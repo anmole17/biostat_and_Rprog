@@ -74,15 +74,15 @@ plot(tab)
 
 # dbinom : get actual probability for a  'x'
 
-n <- 10
-p <- 0.5
-pdens <- dbinom(3,n,p)
+n <- 14
+p <- 0.9
+pdens <- dbinom(12,n,p)
 pdens
 x <- seq(0,n)
 x
 pdens <- dbinom(x,n,p)
 pdens
-plot(x,pdens, type = "h")
+plot(x,pdens, type = "h", col = blue)
 
 # Poisson distribution
 help(ppois)

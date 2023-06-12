@@ -1,3 +1,5 @@
+
+## confidence interval
 X <- rnorm(16, mean= 12, sd=2)
 mean(X)
 #11.94614
