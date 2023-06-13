@@ -38,3 +38,41 @@ print(paste("sd by formula =", (sqrt((Sx_mean^2/n)+(Sy_mean^2/m)))))
 # [1] "sd(Xbar - Ybar)=  0.570267097476935"
 # [1] "mu X - mu Y = -4"
 # [1] "sd by formula = 0.562344881977498"
+
+
+# ## hypothesis testing
+# Two sample t test for independent samples of unknown and unequal 
+# population variances - The Welsch t test
+
+
+sdx=10
+sdy=15
+n=15
+m=5
+#find r
+# use sd() and mean()
+xbar=25
+ybar=34
+r= ((sdx^2/n)+(sdy^2/m))^2/(((1/(n-1))*(sdx^2/n)^2)+
+                              ((1/(m-1))*(sdy^2/m)^2))
+
+
+
+r=round(r) ## round up
+r
+#calculate T
+
+t=(xbar-ybar)/((sqrt((sdx^2/n)+(sdy^2/m))))
+t
+## follows t(r)
+alpha=0.05
+tc = pt((1-alpha/2), r)
+tc
+
+# conf interval 95%
+pos= (xbar-ybar)+ (tc*((sqrt((sdx^2/n)+(sdy^2/m))))) 
+pos
+neg= (xbar-ybar)- (tc*((sqrt((sdx^2/n)+(sdy^2/m))))) 
+neg
+
+
