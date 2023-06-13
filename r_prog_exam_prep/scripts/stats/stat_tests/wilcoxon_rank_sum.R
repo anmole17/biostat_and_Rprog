@@ -14,3 +14,11 @@ placebo = c(59.3,72.7,100.5,64.7,69.0,72.7,69.6,97.4,100.6,65.1,65.7)
 res = wilcox.test(drug,placebo, conf.level=0.95, alternative=c("greater"), conf.int=TRUE )
 
 print(res)
+
+n1=12
+n2=12
+w=14
+## formula
+mu= (n2*(n1+n2+1))/2
+sigma=(n1*n2*(n1+n2+1))/12 
+z= (w-mu)/sigma # follow N(0,1)
