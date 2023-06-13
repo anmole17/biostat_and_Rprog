@@ -19,6 +19,9 @@ asin(x)
 acos(x)
 atan(x)
 abs(-100) # absolute value
+5^2 #square
+
+3 %% 2 # remainder modulus
 
 
 
