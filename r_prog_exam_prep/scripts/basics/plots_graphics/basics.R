@@ -2,7 +2,7 @@ library("grid")
 library("grDevices")
 install.packages("ggplot2")
 library("ggplot2")
-
+install.packages('RMySQL', repos='http://cran.us.r-project.org')
 X11() # new plot open
 
 # multiple plots on same 
