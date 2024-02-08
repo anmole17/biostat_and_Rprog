@@ -1,6 +1,6 @@
 ## Model logistic regression analysis
 
-dat = read.csv(file="white_wine_data.csv", header=TRUE)
+dat = read.csv(file="./logistic_regression/white_wine_data.csv", header=TRUE)
 
 
 ## Take a subset of data
@@ -37,16 +37,29 @@ subdat = data.frame(subdat, wine_quality_num)
 #                  density + pH + sulphates + alcohol + quality,  data = subdat, family = binomial)
 
 ##  removed the "quality" column. Good fit
-#glm.fit <- glm(wine_quality_num ~ fixed.acidity + citric.acid + residual.sugar + chlorides + free.sulfur.dioxide + total.sulfur.dioxide + density + pH + sulphates + alcohol,  data = subdat, family = binomial)
+glm.fit <- glm(wine_quality_num ~ fixed.acidity + citric.acid + residual.sugar 
+               + chlorides + free.sulfur.dioxide + total.sulfur.dioxide + density 
+               + pH + sulphates + alcohol,  data = subdat, family = binomial)
 
 ## removed "chlorides", in addition to "quality", since p-value for chlorides was high in the above fit
-glm.fit <- glm(wine_quality_num ~ fixed.acidity + citric.acid + residual.sugar + free.sulfur.dioxide + total.sulfur.dioxide + density + pH + sulphates + alcohol,  data = subdat, family = binomial)
+glm.fit <- glm(wine_quality_num ~ fixed.acidity + citric.acid + residual.sugar +
+                 free.sulfur.dioxide + total.sulfur.dioxide + density + pH +
+                 sulphates + alcohol,  data = subdat, family = binomial)
 
 #glm.fit <- glm(wine_quality_num ~ fixed.acidity + citric.acid + residual.sugar + free.sulfur.dioxide + total.sulfur.dioxide + density + pH + sulphates + alcohol,  data = subdat, family = binomial)
-glm.fit <- glm(wine_quality_num ~ residual.sugar + free.sulfur.dioxide + total.sulfur.dioxide + density + pH + sulphates + alcohol,  data = subdat, family = binomial)
+glm.fit <- glm(wine_quality_num ~ residual.sugar + free.sulfur.dioxide + 
+                 total.sulfur.dioxide + density + pH + sulphates + alcohol,  data = subdat, family = binomial)
 
 # remove alcohol 
-glm.fit <- glm(wine_quality_num ~ fixed.acidity + citric.acid + residual.sugar + free.sulfur.dioxide + total.sulfur.dioxide + density + pH + sulphates ,  data = subdat, family = binomial)
+glm.fit <- glm(wine_quality_num ~ fixed.acidity + citric.acid + residual.sugar +
+                 free.sulfur.dioxide + total.sulfur.dioxide + density + pH +
+                 sulphates ,  data = subdat, family = binomial)
+glm.fit <- glm(wine_quality_num ~ residual.sugar + pH +
+                 alcohol ,  data = subdat, family = binomial)
+
+# glm.fit <- glm(wine_quality_num ~  residual.sugar +
+#                  free.sulfur.dioxide + total.sulfur.dioxide + density + pH +
+#                  sulphates + alcohol,  data = subdat, family = binomial)
 
 
 print(summary(glm.fit))
@@ -64,32 +77,51 @@ print(summary(glm.fit))
 
 ### Computing the fitted values and the probability og Y=1 given a set of X values
 
-## exponent = \b0 + b1*X1 + b2*X2 + ....+ bp*Xp
+## exponent = b0 + b1*X1 + b2*X2 + ....+ bp*Xp
  Yex = rep(0, nrow(subdat))
 
 ## Probability that Y=1 for a given data points X.
  P = rep(0, nrow(subdat))
 
 
- #Yex =  glm.fit$coefficients[1] + glm.fit$coefficients[2]*subdat$fixed.acidity + glm.fit$coefficients[3]*subdat$citric.acid + glm.fit$coefficients[4]*subdat$residual.sugar +  glm.fit$coefficients[5]*subdat$free.sulfur.dioxide + glm.fit$coefficients[6]*subdat$total.sulfur.dioxide + glm.fit$coefficients[7]*subdat$density + glm.fit$coefficients[8]*subdat$pH +  glm.fit$coefficients[9]*subdat$sulphates + glm.fit$coefficients[10]*subdat$alcohol
+ Yex =  glm.fit$coefficients[1] + glm.fit$coefficients[2]*subdat$fixed.acidity + glm.fit$coefficients[3]*subdat$citric.acid + glm.fit$coefficients[4]*subdat$residual.sugar +  glm.fit$coefficients[5]*subdat$free.sulfur.dioxide + glm.fit$coefficients[6]*subdat$total.sulfur.dioxide + glm.fit$coefficients[7]*subdat$density + glm.fit$coefficients[8]*subdat$pH +  glm.fit$coefficients[9]*subdat$sulphates + glm.fit$coefficients[10]*subdat$alcohol
+ 
  #Yex =  glm.fit$coefficients[1] +  glm.fit$coefficients[2]*subdat$residual.sugar +  glm.fit$coefficients[3]*subdat$free.sulfur.dioxide + glm.fit$coefficients[4]*subdat$total.sulfur.dioxide + glm.fit$coefficients[5]*subdat$density + glm.fit$coefficients[6]*subdat$pH +  glm.fit$coefficients[7]*subdat$sulphates + glm.fit$coefficients[8]*subdat$alcohol
- Yex =  glm.fit$coefficients[1] + glm.fit$coefficients[2]*subdat$fixed.acidity + glm.fit$coefficients[3]*subdat$citric.acid + glm.fit$coefficients[4]*subdat$residual.sugar +  glm.fit$coefficients[5]*subdat$free.sulfur.dioxide + glm.fit$coefficients[6]*subdat$total.sulfur.dioxide + glm.fit$coefficients[7]*subdat$density + glm.fit$coefficients[8]*subdat$pH +  glm.fit$coefficients[9]*subdat$sulphates 
+ 
+ # Yex =  glm.fit$coefficients[1] + glm.fit$coefficients[2]*subdat$fixed.acidity +
+ #   glm.fit$coefficients[3]*subdat$citric.acid + glm.fit$coefficients[4]*subdat$residual.sugar +
+ #   glm.fit$coefficients[5]*subdat$free.sulfur.dioxide + 
+ #   glm.fit$coefficients[6]*subdat$total.sulfur.dioxide + 
+ #   glm.fit$coefficients[7]*subdat$density + glm.fit$coefficients[8]*subdat$pH + 
+ #   glm.fit$coefficients[9]*subdat$sulphates 
+ 
+ # Yex =  glm.fit$coefficients[1] + glm.fit$coefficients[2]*subdat$residual.sugar +
+ #   glm.fit$coefficients[3]*subdat$pH +glm.fit$coefficients[4]*subdat$alcohol
+ 
+ # Yex =  glm.fit$coefficients[1] + #glm.fit$coefficients[2]*subdat$fixed.acidity +
+ #   #glm.fit$coefficients[3]*subdat$citric.acid + 
+ #   glm.fit$coefficients[2]*subdat$residual.sugar +
+ #   glm.fit$coefficients[3]*subdat$free.sulfur.dioxide + 
+ #   glm.fit$coefficients[4]*subdat$total.sulfur.dioxide + 
+ #   glm.fit$coefficients[5]*subdat$density + glm.fit$coefficients[6]*subdat$pH + 
+ #   glm.fit$coefficients[7]*subdat$sulphates 
  
  ## same result, easily using the function
-#Yex = predict(glm.fit)
+Yex = predict(glm.fit)
 
 P = exp(Yex)/(1 + exp(Yex))
 ## same probabilities, using predict function with type=response
-#P = predict(glm.fit, type="response")
+P = predict(glm.fit, type="response")
 
 
 ## Write the results and original data into a data frame:
 
 df = data.frame(subdat, P)
 
-write.csv(df, file="fitted_data.csv", row.names=FALSE)
+write.csv(df, file="./logistic_regression/fitted_data.csv", row.names=FALSE)
 
 ##---------------------------------------------------------------------
+
 
 
 
